@@ -1,0 +1,30 @@
+.register-card {
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+  
+  .register-card h2 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+  }
+  
+  .register-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--gray-600);
+  }
+  
+  .login-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
