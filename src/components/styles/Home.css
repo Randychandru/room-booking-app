@@ -1,163 +1,257 @@
+/* Home.css */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light gray background */
+}
+
 .home-container {
-    min-height: 100vh;
-    background-color: #f8f9fa;
-  }
-  
+  width: 100%;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+  color: #2980b9;
+  text-align: center;
+  padding: 100px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
+}
+
+.hero-section .subtitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Features Section */
+.features-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff; /* White background for features */
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #343a40; /* Dark gray heading */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f8f9fa; /* Light gray card background */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Card shadow */
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+}
+
+.feature-card i {
+  font-size: 3rem;
+  color: #007bff; /* Bootstrap primary blue */
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+.feature-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6c757d; /* Gray text */
+}
+
+/* Rooms Preview Section */
+.rooms-preview {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+.rooms-preview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #343a40;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room-card {
+  border-radius: 10px;
+  background-color: #fff; /* White card background */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-image {
+  width: 100%;
+  height: 250px; /* Fixed height for room images */
+  object-fit: cover; /* Ensure images cover the space */
+  border-bottom: 1px solid #dee2e6; /* Light border */
+}
+
+.room-card h3 {
+  font-size: 1.8rem;
+  margin: 20px;
+  color: #343a40;
+  text-align: left;
+}
+
+.room-card p {
+  font-size: 1.1rem;
+  margin: 0 20px 20px;
+  line-height: 1.6;
+  color: #6c757d;
+  text-align: left;
+}
+
+/* Room specific image class */
+.conference-room {
+   background-image: url("/src/Vista.jpg");
+}
+
+.meeting-room {
+  background-image: url("/src/Matrix.jpg");
+}
+
+.training-room {
+  background-image: url("/src/Huddle.jpg");
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: #fff;
+}
+
+.cta-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* Site Footer */
+.site-footer {
+  background-color: #343a40; /* Dark gray footer */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .hero-section {
-    background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 3rem;
+    height: auto;
+    padding: 60px 20px;
   }
-  
+
   .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: fadeInUp 0.8s ease;
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    animation: fadeInUp 0.8s ease 0.2s both;
-  }
-  
-  .cta-button {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-    background-color: #fff;
-    color: #1e88e5;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: fadeInUp 0.8s ease 0.4s both;
-  }
-  
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .features-section {
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .features-section h2 {
-    color: #1e88e5;
-    margin-bottom: 3rem;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .feature-card i {
     font-size: 2.5rem;
-    color: #1e88e5;
-    margin-bottom: 1rem;
   }
-  
-  .feature-card h3 {
-    color: #333;
-    margin-bottom: 1rem;
+
+  .hero-section .subtitle {
+    font-size: 1.2rem;
   }
-  
-  .rooms-preview {
-    padding: 4rem 2rem;
-    background-color: white;
+
+  .features-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .rooms-preview h2 {
-    text-align: center;
-    color: #1e88e5;
-    margin-bottom: 3rem;
-  }
-  
+
   .rooms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: 1fr;
   }
-  
-  .room-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+  .cta-section h2 {
+    font-size: 2rem;
   }
-  
-  .room-card:hover {
-    transform: translateY(-5px);
+
+  .cta-section p {
+    font-size: 1.2rem;
   }
-  
-  .room-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .conference-room {
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800');
-  }
-  
-  .meeting-room {
-    background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800');
-  }
-  
-  .training-room {
-    background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800');
-  }
-  
-  .room-card h3 {
-    padding: 1.5rem 1.5rem 0.5rem;
-    color: #333;
-  }
-  
-  .room-card p {
-    padding: 0 1.5rem 1.5rem;
-    color: #666;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .hero-section h1 {
-      font-size: 2rem;
-    }
-    
-    .features-grid, .rooms-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}

@@ -1,30 +1,176 @@
+/* Register.css */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/src/Matrix.jpg'); /* Corrected Image Path Here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative; /* Required for absolute positioning of pseudo-element */
+}
+
+.register-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 152, 219, 0.3); /* Semi-transparent blue overlay */
+  backdrop-filter: blur(5px); /* Apply blur to the background image */
+  z-index: -1; /* Place the overlay behind the content */
+}
+
 .register-card {
-    max-width: 400px;
-    margin: 2rem auto;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7); /* A bit more transparency for the card */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.register-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2980b9; /* Blue title */
+}
+
+.register-subtitle {
+  font-size: 1rem;
+  color: #2980b9; /* Grey subtitle, leave as is or change to a lighter blue */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #3498db; /* Blue label */
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  transition: border-color 0.2s ease;
+  outline: none;
+
+  &:focus {
+      border-color: #3498db; /* Blue focus */
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
   }
+}
+
+.input-error {
+  border-color: #e74c3c !important; /* Red error, keep this */
+}
+
+.error-message {
+  color: #e74c3c; /* Red error message, keep this */
+  font-size: 0.85rem;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.register-button {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  color: #fff; /* White text on button */
+  background-color: #3498db; /* Blue button */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+      background-color: #2980b9; /* Darker blue hover */
+  }
+
+  &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+  }
+}
+
+.login-link {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #777;
+
+  a {
+      color: #3498db; /* Blue link */
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+          text-decoration: underline;
+      }
+  }
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Add responsive design */
+@media (max-width: 576px) {
+  .register-card {
+      padding: 30px;
+  }
+
+  .register-title {
+      font-size: 1.75rem;
+  }
+
+  .register-subtitle {
+      font-size: 0.9rem;
+  }
+
+  .form-group {
+      margin-bottom: 20px;
+  }
+
+  .form-input {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+  }
+
+  .register-button {
+      padding: 12px 18px;
+      font-size: 1rem;
+  }
+}
+
+
+.register-button {
   
-  .register-card h2 {
-    color: var(--primary-blue);
-    margin-bottom: 0.5rem;
-  }
-  
-  .register-btn {
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  .login-link {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: var(--gray-600);
-  }
-  
-  .login-link a {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .login-link a:hover {
-    text-decoration: underline;
-  }
+  display: flex; /* Add this to align icon and text */
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon and text */
+}
+
+.register-button i {
+  margin-right: 8px; /* Add some spacing between the icon and text */
+}
