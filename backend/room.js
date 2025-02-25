@@ -1,15 +1,16 @@
-const mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const pool = require('../db');
 
-const bookingSchema = new mongoose.Schema({
-    userId: { type: String, required: true },
-    userName: { type: String, required: true },
-    room: { type: String, required: true },
-    date: { type: String, required: true },
-    startTime: { type: String, required: true },
-    endTime: { type: String, required: true },
-    purpose: { type: String, required: true },
-    bookingTime: { type: String, default: Date.now },
-    confirmed: { type: Boolean, default: false },
-    //This had the change
-    autoCancelTime: { type: Number, default:0} // Time that it can be auto deleted in UNIX milliseconds
+// GET all rooms
+router.get('/rooms', async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM rooms");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
+
+module.exports = router;
