@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../db');
 
 // GET all rooms
-router.get('/rooms', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM rooms");
     res.json(result.rows);
